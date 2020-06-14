@@ -49,10 +49,19 @@
                             <nav>
                                 <ul id="navigation">
                                     <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                                    <li>
+                                        <a href="#">Category</a>
+                                        <ul class="submenu">
+                                            @Html.Action("ListCategory", "Category")
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Brand</a>
+                                        <ul class="submenu">
+                                            @Html.Action("ListBrand", "Brand")
+                                        </ul>
+                                    </li>
                                     <li><a href="@Url.Action("About","Home")">about</a></li>
-                                                                   
-
-
                                     <li><a href="@Url.Action("Contact","Home")">Contact</a></li>
                                 </ul>
                             </nav>
@@ -64,7 +73,7 @@
                                     <div class="nav-search search-switch">
                                         <span class="flaticon-search"></span>
                                     </div>
-                                </li>                               
+                                </li>
                                 <li><a href="@Url.Action("Index","Cart")"><span class="flaticon-shopping-cart"></span></a> </li>
                             </ul>
                         </div>
@@ -83,6 +92,7 @@
         <div class="container">
             @RenderBody()
         </div>
+
         <!-- Shop Method End-->
     </main>
     <footer>
@@ -184,7 +194,7 @@
     </div>
     <!-- Search model end -->
     <!-- JS here -->
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="~/assets/js/vendor/modernizr-3.5.0.min.js"></script>
 
     <script src="~/assets/js/vendor/jquery-1.12.4.min.js"></script>
@@ -217,7 +227,8 @@
 
     <script src="~/assets/js/plugins.js"></script>
     <script src="~/assets/js/main.js"></script>
-     
+
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

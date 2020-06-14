@@ -8,15 +8,15 @@ namespace WatchShop.Models
 {
     public class Item
     {
-        public int ID { get; set; }
+        public int id { get; set; }
         [Required]
-        public string Name { get; set; }
-        public long Price { get; set; }
-        public int BrandId { get; set; }
+        public string name { get; set; }
+        public long price { get; set; }
+        public int brandId { get; set; }
         public virtual Brand Brand { get; set; }     
         [Required]
-        public int CategoryId { get; set; }
+        public int categoryId { get; set; }
         public virtual Category Category { get; set; }
-        public string Image { get; set; }
+        public string image { get; set; }
     }
 }

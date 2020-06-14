@@ -51,39 +51,17 @@
         </div>
     </div>
 </div>
+<form class="form-inline" action="/Home/Index">
+    @Html.Label("Search", new { @class = "mr-1" })
+    @Html.TextBox("Search", ViewBag.search as string, new { @class = "form-control mr-1", placeholder = "Search" })
+
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
 <!-- slider Area End-->
 <!-- Latest Products Start -->
 <section class="popular-items latest-padding">
     <div class="container">
-        <div class="row product-btn justify-content-between mb-40">
-            <div class="properties__button">
-                <!--Nav Button  -->
-                <nav>
-                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">NewestArrivals</a>
-                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"> Price high to low</a>
-                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"> Most populer </a>
-                    </div>
-                </nav>
-                <!--End Nav Button  -->
-            </div>
-            <!-- Grid and List view -->
-            <div class="grid-list-view">
-            </div>
-            <!-- Select items -->
-            <div class="select-this">
-                <form action="#">
-                    <div class="select-itms">
-                        <select name="select" id="select1">
-                            <option value="">40 per page</option>
-                            <option value="">50 per page</option>
-                            <option value="">60 per page</option>
-                            <option value="">70 per page</option>
-                        </select>
-                    </div>
-                </form>
-            </div>
-        </div>
+
         <!-- Nav Card -->
 
         <div class="tab-content" id="nav-tabContent">
@@ -104,7 +82,7 @@
                                     </div>
                                 </div>
                                 <div class="popular-caption">
-                                    <h3><a href="/Item/Detail/@item.id">@Html.DisplayFor(modelItem => item.name)</a></h3>
+                                    <h3><a id="my-search-1" href="/Item/Detail/@item.id">@Html.DisplayFor(modelItem => item.name)</a></h3>
                                     <span>@Html.DisplayFor(modelItem => item.price) VND</span>
                                 </div>
                             </div>

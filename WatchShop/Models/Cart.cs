@@ -22,10 +22,10 @@ namespace WatchShop.Models
         public Cart(int id)
         {
             itemId = id;
-            Item item = dbContext.Items.Single(n => n.ID == itemId);
-            itemName = item.Name;
-            itemImage = item.Image;
-            itemPrice = long.Parse(item.Price.ToString());
+            Item item = dbContext.Items.Single(n => n.id == itemId);
+            itemName = item.name;
+            itemImage = item.image;
+            itemPrice = long.Parse(item.price.ToString());
             itemQuatity = 1;
         }
     }

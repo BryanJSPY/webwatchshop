@@ -27,33 +27,33 @@ namespace WatchShop.Migrations
                 new Brand() { id = 1, name = "Rolex" },
                 new Brand() { id = 2, name = "Casio" }
             );
-            context.Items.AddOrUpdate(x => x.ID,
+            context.Items.AddOrUpdate(x => x.id,
                 new Item()
                 {
-                    ID = 1,
-                    Name = "Dong ho 1",
-                    Price = 100000,
-                    CategoryId = 1,
-                    BrandId = 2,
-                    Image = "/assets/img/gallery/popular1.png"
+                    id = 1,
+                    name = "Dong ho 1",
+                    price = 100000,
+                    categoryId = 1,
+                    brandId = 2,
+                    image = "/assets/img/gallery/popular1.png"
                 },
                 new Item()
                 {
-                    ID = 2,
-                    Name = "Dong ho 2",
-                    Price = 100000,
-                    CategoryId = 1,
-                    BrandId = 1,
-                    Image = "/assets/img/gallery/popular1.png"
+                    id = 2,
+                    name = "Dong ho 2",
+                    price = 100000,
+                    categoryId = 1,
+                    brandId = 1,
+                    image = "/assets/img/gallery/popular1.png"
                 },
                 new Item()
                 {
-                    ID = 3,
-                    Name = "Dong ho 3",
-                    Price = 100000,
-                    CategoryId = 2,
-                    BrandId = 2,
-                    Image = "/assets/img/gallery/popular1.png"
+                    id = 3,
+                    name = "Dong ho 3",
+                    price = 100000,
+                    categoryId = 2,
+                    brandId = 2,
+                    image = "/assets/img/gallery/popular1.png"
                 }
                 );
         }

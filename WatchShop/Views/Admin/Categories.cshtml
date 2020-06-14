@@ -4,11 +4,6 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-
-
-
-
-
 <h2>Categories</h2>
 <p>
     @Html.ActionLink("Create Category", "Create","Category")
@@ -28,8 +23,8 @@
                 @Html.DisplayFor(modelItem => item.name)
             </td>
             <td>
-                @Html.ActionLink("Edit", "EditCategory", new { id = item.id }) |
-                @Html.ActionLink("Delete", "DeleteCategory", new { id = item.id })
+                @Html.ActionLink("Edit", "Edit","Category", new { id = item.id }, new { @class = "" }) |
+                @Html.ActionLink("Delete", "Delete", "Category", new { id = item.id }, new { @class = "" })
             </td>
         </tr>
     }

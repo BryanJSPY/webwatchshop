@@ -5,47 +5,12 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-@using (Html.BeginForm())
+<h2>Create</h2>
+
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="col-lg-12">
-        <div class="card">
-            <div class="card-header">
-                <strong>CREATE BRAND</strong>
-            </div>
-            <div class="card-body card-block">
-                @*Name*@
-                <div class="row form-group">
-                    <div class="col col-md-3">
-                        @Html.LabelFor(model => model.name, "Name", htmlAttributes: new { @class = " form-control-label", @for = "text-input" })
-                    </div>
-                    <div class="col-12 col-md-9">
-                        @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control", @id = "text-input", @placeholder = "Enter Name" } })
-                        @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-primary" style="margin-left: 25%;">
-                        Create
-                    </button>
-                    <button type="reset" class="btn btn-danger ml-3">
-                        @Html.ActionLink("Back to List", "Categories", "Admin")
-                    </button>
-                </div>
-
-            </div>
-        </div>
-    </div>
-}
-
-
-@*<h2>Create</h2>
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
+    
     <div class="form-horizontal">
         <h4>Brand</h4>
         <hr />
@@ -68,4 +33,4 @@
 
 <div>
     @Html.ActionLink("Back to List", "Index")
-</div>*@
+</div>

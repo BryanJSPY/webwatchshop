@@ -10,9 +10,10 @@ namespace WatchShop.Controllers
     public class HomeController : Controller
     {
         ApplicationDbContext dbContext = new ApplicationDbContext();
-        public ActionResult Index()
+        public ActionResult Index(string search = "")
         {
-            List<Item> listItem = dbContext.Items.ToList();//database
+            List<Item> listItem = dbContext.Items.Where(temp => temp.name.Contains(search)).ToList();//database
+            ViewBag.search = search;
             return View(listItem);
         }
 
