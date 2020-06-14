@@ -1,0 +1,41 @@
+﻿@model WatchShop.Models.Brand
+
+@{
+    ViewBag.Title = "EditBrand";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.id)
+
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <strong>EDIT BRAND</strong>
+            </div>
+            <div class="card-body card-block">
+                @*Name*@
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        @Html.LabelFor(model => model.name, htmlAttributes: new { @class = " form-control-label", @for = "text-input" })
+                    </div>
+                    <div class="col-12 col-md-9">
+                        @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control", @id = "text-input", @placeholder = "Enter Name" } })
+                        @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary" style="margin-left: 25%;">
+                        Save
+                    </button>
+                    <button type="reset" class="btn btn-danger ml-3">
+                        @Html.ActionLink("Back to List", "Index","Brand")
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WatchShop.Models.Item>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<button type="button" class="btn btn-primary mt-1">@Html.ActionLink("Create Item", "Create", "Item")</button>
+
+<div class="row mt-2">
+    <div class="col-lg-12">
+        <div class="table-responsive table--no-card m-b-30">
+            <table class="table table-borderless table-striped table-earning">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.ID)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                            <td><img src="@Html.DisplayFor(modelItem => item.Image)" style="width:50px;height:auto;"></td>
+                            <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                            <td>
+                                <pre style="font-size: 16px; font-family: Poppins, sans-serif; color: #808080;">@Html.ActionLink("Edit", "EditItem", "Admin",new { id = item.ID },new { id = "cc", Style = "color: #808080"}) | @Html.ActionLink("Detail", "Detail", "Item",new { id = item.ID },new{  id = "cc", Style = "color: #808080"}) | @Html.ActionLink("Delete", "DeleteItem", "Admin",new { id = item.ID },new {id = "cc", Style = "color: #808080"})</pre>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
